@@ -94,7 +94,7 @@ def generate_level(levelmap):
     global key
     first_player, x, y = None, None, None
     fon = pygame.transform.scale(
-        load_image('fon1.png'),
+        load_image('game_back_fon.png'),
         (width, height))
     screen.blit(fon, (0, 0))
     for y in range(len(levelmap)):
@@ -233,7 +233,6 @@ class Player(pygame.sprite.Sprite):
                     while not bool(test):
                         self.rect.y -= 0.0001
                 elif dy < 0:
-                    print('0')
                     gravity_step = 2
                     jump_step = 8
                     self.jump_power = 35
@@ -298,10 +297,10 @@ def start_screen():
     key_group = pygame.sprite.Group()
     door_group = pygame.sprite.Group()
     fon = pygame.transform.scale(
-        load_image('one.jpg'),
+        load_image('game_start_fon.jpg'),
         (width, height))
     fon1 = pygame.transform.scale(
-        load_image('fon1.png'),
+        load_image('game_back_fon.png'),
         (width, height))
     intro_text_levels = [""]
     move_1 = "Stop"
@@ -418,7 +417,7 @@ def start_screen():
                     key.rect.y = 220
                 elif which_level == 4:
                     run = True
-                    the_end_image = load_image("the_end.jpg")
+                    the_end_image = load_image("the_end_of_game_fon.jpg")
                     while run:
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
@@ -483,9 +482,9 @@ which_level = 1
 which_level_past = 0
 wall_image = load_image('wall.png')
 door_image = pygame.transform.scale(load_image("door.png", -1), (30, 150))
-player_image = pygame.transform.scale(load_image("стикмен-стоит2.png", -1), (28, 57))
-jump = pygame.transform.scale(load_image('прыжок.png', -1), (28, 57))
-fall = pygame.transform.scale(load_image('упал.png', -1), (28, 57))
+player_image = pygame.transform.scale(load_image("standing.png", -1), (28, 57))
+jump = pygame.transform.scale(load_image('jump.png', -1), (28, 57))
+fall = pygame.transform.scale(load_image('fall.png', -1), (28, 57))
 walkRight = [pygame.transform.scale(load_image('r1.png', -1), (28, 57)),
              pygame.transform.scale(load_image('r1.png', -1), (28, 57)),
              pygame.transform.scale(load_image('r2.png', -1), (28, 57)),
@@ -515,7 +514,7 @@ walkLeft = [pygame.transform.scale(load_image('l1.png', -1), (28, 57)),
             pygame.transform.scale(load_image('l7.png', -1), (28, 57)),
             pygame.transform.scale(load_image('l7.png', -1), (28, 57))]
 
-key_image = pygame.transform.scale(load_image('ключ2.png', -1), (40, 44))
+key_image = pygame.transform.scale(load_image('key.png', -1), (40, 44))
 invisible = pygame.transform.scale(load_image('invisible.jpg', -1), (40, 44))
 tile_images = {"wall": load_image("wall.png"),
                "right": pygame.transform.scale(load_image_thorn_right("right_normal.png", -1),
