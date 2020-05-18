@@ -377,15 +377,15 @@ def start_screen():
                 player.image = fall
                 player.gravity()
         if stop == 1:
-            intro_text = ["Press 'space' to start"]
+            intro_text = ["Press 'space' to start", "Press'tab' to take a pause"]
             screen.blit(fon, (0, 0))
             pygame.init()
             font = pygame.font.Font(None, 50)
-            text_coord = 50
+            text_coord = 560
             for line in intro_text:
                 string_rendered = font.render(line, 1, pygame.Color('grey'))
                 intro_rect = string_rendered.get_rect()
-                text_coord += 570
+                text_coord += 10
                 intro_rect.top = text_coord
                 intro_rect.x = 475
                 text_coord += intro_rect.height
@@ -424,8 +424,7 @@ def start_screen():
                                 run = False
                         congratulations = ["Мои поздравления-вы прошли игру.",
                                            "Спасибо вам за прохождение!",
-                                           "Надеюсь моя игра подарила вам хорошие впечатления.",
-                                           'Продолжение следует.']
+                                           "Надеюсь моя игра подарила вам хорошие впечатления."]
                         screen.blit(the_end_image, (0, 0))
                         pygame.init()
                         font = pygame.font.Font(None, 50)
